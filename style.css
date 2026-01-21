@@ -29,7 +29,6 @@ body {
 }
 
 .webring {
-  border: 2px solid red;
   margin: 16px 16px 16px 0;
   max-height: 100px; 
   width: 50%;
@@ -219,7 +218,6 @@ body {
   }
 
   .webring {
-    border: 2px solid red;
     margin: 16px 16px 16px 0;
     max-height: 100px; 
     width: 30%;
