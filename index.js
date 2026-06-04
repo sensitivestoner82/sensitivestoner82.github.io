@@ -65,7 +65,6 @@ window.onload = (event) => {
 function caramelldansen(ev) {
   if (!caramelldansenAudio) {
     caramelldansenAudio = new Audio('/yeah.mp3');
-    caramelldansenAudio.volume = 0.03;
     caramelldansenAudio.loop = true;
     caramelldansenAudio.play();
     aoiSora.style.setProperty("animation-name", "shes-rainbow");
@@ -85,31 +84,23 @@ function onMouseDown(ev) {
   const rect = kickFlipperElement.getBoundingClientRect();
   offsetX = ev.clientX - rect.left;
   offsetY = ev.clientY - rect.top;
+  kickFlipperElement.classList.add("skewflipper");
 
   ev.preventDefault();
 }
 
 function onMouseMove(ev) {
   if (drag) {
-    if (!kickFlipperElement.style.getPropertyValue("animation-name")) {
-      kickFlipperElement.style.setProperty("animation-name", "rotate-flipper");
-    }
-    if (!kickFlipperElement.style.getPropertyValue("animation-iteration-count") !== "infinite") {
-      kickFlipperElement.style.setProperty("animation-iteration-count", "infinite");
-    }
-    kickFlipperElement.style.left = `${ev.pageX - offsetX}px`;
-    kickFlipperElement.style.top = `${ev.pageY - offsetY}px`;
+    kickFlipperElement.style.setProperty("animation-name", "rotate-flipper");
+    kickFlipperElement.style.left = ev.pageX - offsetX;
+    kickFlipperElement.style.top = ev.pageY - offsetY;
   }
 }
 
 function onMouseUp(ev) {
   if (drag) {
+    kickFlipperElement.style.removeProperty("animation-name");
     drag = false;
-    kickFlipperElement.addEventListener("animationiteration", (ev) => {
-      kickFlipperElement.style.removeProperty("animation-name");
-    }, {
-      once: true,
-    });
     kickFlipperElement.src = "kickflip2.png";
     kickFlipperElement.classList.remove("skewflipper");
   }
