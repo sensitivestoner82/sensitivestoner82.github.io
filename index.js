@@ -92,8 +92,8 @@ function onMouseDown(ev) {
 function onMouseMove(ev) {
   if (drag) {
     kickFlipperElement.style.setProperty("animation-name", "rotate-flipper");
-    kickFlipperElement.style.left = ev.pageX - offsetX;
-    kickFlipperElement.style.top = ev.pageY - offsetY;
+    kickFlipperElement.style.left = (ev.pageX - offsetX) + "px";
+    kickFlipperElement.style.top = (ev.pageY - offsetY) + "px";
   }
 }
 
