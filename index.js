@@ -66,6 +66,7 @@ function caramelldansen(ev) {
   if (!caramelldansenAudio) {
     caramelldansenAudio = new Audio('/yeah.mp3');
     caramelldansenAudio.loop = true;
+    caramelldansenAudio.volume = 0.15;
     caramelldansenAudio.play();
     aoiSora.style.setProperty("animation-name", "shes-rainbow");
   }
