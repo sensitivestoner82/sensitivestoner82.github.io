@@ -7,9 +7,9 @@ body {
   font-family: pc-98;
   background-image: url('/tempbg.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover auto;
   z-index: -20;
-  height: 100vh;
+  min-height: 100%;
   color: white;
 }
 
