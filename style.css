@@ -39,8 +39,7 @@ body {
 }
 
 .wikipe {
-  visibility: hidden;
-  position: fixed;
+  display: none;
 }
 
 .page-container {
@@ -241,12 +240,13 @@ body {
     animation-timing-function: linear;
   }
 
+  .wikipe-container {
+    display: flex;
+    justify-content: center;
+  }
 
   .wikipe {
-    position: absolute;
-    right: 75px;
-    top: 10px;
-    visibility: visible;
+    display: block;
   }
 
   .nav-cluster {
